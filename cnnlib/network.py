@@ -45,6 +45,7 @@ class CNN(object):
         """
         text_len = len(text)
         if text_len > self.max_captcha:
+            print("text:%s", text)
             raise ValueError('验证码最长{}个字符'.format(self.max_captcha))
 
         vector = np.zeros(self.max_captcha * self.char_set_len)

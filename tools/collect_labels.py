@@ -7,7 +7,7 @@ import os
 import json
 
 
-image_dir = "../sample/origin"
+image_dir = r"D:\TrainSet\train\label"
 image_list = os.listdir(image_dir)
 
 labels = set()
@@ -23,7 +23,7 @@ for img in image_list:
 
 print("共有标签{}种".format(len(labels)))
 
-with open("./labels.json", "w") as f:
+with open("./labels.json", "w",encoding="utf-8") as f:
     f.write(json.dumps("".join(list(labels)), ensure_ascii=False))
 
 print("将标签列表写入文件labels.json成功")
